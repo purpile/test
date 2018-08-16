@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form(form) }}
+
+    <br>
+    <br>
+    <br>
+    <table>
+    <tr>
+        <td>Model</td>
+        <td>Marka</td>
+        <td>System</td>
+        <td>Urządzenie</td>
+    </tr>
+    {% for d in devices %}
+        <tr>
+            <td>{{ d.model }}</td>
+            <td>{{ d.brand }}</td>
+            <td>{{ d.system }}</td>
+            <td>{{ d.type.name }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
